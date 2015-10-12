@@ -59,10 +59,10 @@ func CheckBearerAuth(r *http.Request) *BearerAuth {
 	return &BearerAuth{Code: token}
 }
 
-// getClientAuth checks client basic authentication in params if allowed,
+// GetClientAuth checks client basic authentication in params if allowed,
 // otherwise gets it from the header.
 // Sets an error on the response if no auth is present or a server error occurs.
-func getClientAuth(w *Response, r *http.Request, allowQueryParams bool) *BasicAuth {
+func GetClientAuth(w *Response, r *http.Request, allowQueryParams bool) *BasicAuth {
 
 	if allowQueryParams {
 		// Allow for auth without password
