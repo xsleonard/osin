@@ -86,7 +86,7 @@ func TestGetClientAuth(t *testing.T) {
 		w := new(Response)
 		r := &http.Request{Header: tt.header, URL: tt.url}
 		r.ParseForm()
-		auth := getClientAuth(w, r, tt.allowQueryParams)
+		auth := GetClientAuth(w, r, tt.allowQueryParams)
 		if tt.expectAuth && auth == nil {
 			t.Errorf("Auth should not be nil for %v", tt)
 		} else if !tt.expectAuth && auth != nil {
